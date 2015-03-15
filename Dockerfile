@@ -13,6 +13,7 @@ RUN apt-get install -y nodejs
 # install react-isomorphic-starterkit
 #RUN git clone https://github.com/RickWong/react-isomorphic-starterkit.git
 COPY . react-isomorphic-starterkit
-RUN cd react-isomorphic-starterkit && npm install -g supervisor webpack webpack-dev-server concurrently
-RUN cd react-isomorphic-starterkit && npm install
+WORKDIR react-isomorphic-starterkit
+RUN npm install -g supervisor webpack webpack-dev-server concurrently
+RUN npm install
 
