@@ -1,14 +1,6 @@
-FROM ubuntu:14.10
+FROM node:0.12-wheezy
 
-# make sure apt is up to date
-RUN apt-get update
-
-# Install newest Node 0.10.x repo
-# (Just running apt-get install -y nodejs would install 0.10.25 which is too old)
-RUN apt-get install -y curl && curl -sL https://deb.nodesource.com/setup | sudo bash -
-
-# install nodejs, npm
-RUN apt-get install -y nodejs 
+RUN apt-get update && apt-get install less
 
 # install react-isomorphic-starterkit
 #RUN git clone https://github.com/RickWong/react-isomorphic-starterkit.git
